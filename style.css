@@ -1,4 +1,3 @@
-/*
 @font-face {
     font-family:"STARWARS";
     src:url("fonts/STARWARS.eot?") format("eot"),
@@ -8,14 +7,14 @@
     font-weight:normal;
     font-style:normal;
 }
-*/
+
 h1, 
 h2, 
 h3, 
 p {
   /* font-family: "Helvetica", sans-serif; */
   /* font-family: 'Nosifer', cursive; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: STARWARS, Verdana, Geneva, Tahoma, sans-serif
 }
 
 h1 {
