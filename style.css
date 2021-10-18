@@ -13,8 +13,8 @@ h2,
 h3, 
 p {
   /* font-family: "Helvetica", sans-serif; */
-  /* font-family: 'Nosifer', cursive; */
-  font-family: STARWARS, Verdana, Geneva, Tahoma, sans-serif
+  font-family: 'Nosifer', cursive;
+  /* font-family: STARWARS, Verdana, Geneva, Tahoma, sans-serif */
 }
 
 h1 {
