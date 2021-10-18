@@ -8,11 +8,6 @@
     font-style:normal;
 }
 
-@font-face {
-    font-family: 'StarWars';
-    src: url('fonts/STARWARS.ttf') format('truetype'), url('fonts/STARWARS.woff') format('woff'); 
-}
-
 h1, 
 h2, 
 h3, 
