@@ -14,7 +14,7 @@ h3,
 p {
   /* font-family: "Helvetica", sans-serif; */
   /* font-family: 'Nosifer', cursive; */
-  font-family: 'STARWARS';
+  font-family: 'STARWARS', Georgia, 'Times New Roman', Times, serif;
 }
 
 h1 {
