@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'StarWars';
+    src: url('fonts/StarJedi-DGRW.ttf') format('truetype'), url('fonts/StarJediHollow-A4lL.ttf') format('truetype'); 
+}
+
 h1, 
 h2, 
 h3, 
 p {
-  font-family: "Helvetica", sans-serif;
+  /* font-family: "Helvetica", sans-serif; */
+  /* font-family: 'Nosifer', cursive; */
+  font-family: 'StarWars';
 }
 
 h1 {
