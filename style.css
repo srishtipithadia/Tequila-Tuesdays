@@ -8,25 +8,80 @@
     font-style:normal;
 }
 
+body {
+  background-color: peachpuff;
+}
+
+#loading-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#user-input-container {
+  margin: auto;
+  text-align: center;
+  display: block;
+  background-color: rgb(243, 126, 72);
+  width: 30vw;
+  height: 20vh;
+  border-radius: 10px;
+  padding-top: 3vh;
+  padding-bottom: 3.5vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#loading-submit {
+  background-color: peachpuff;
+  border: 0px solid;
+  height: 4vh;
+  width: 10vw;
+  border-radius: 5px;
+  font-family: 'STARWARS';
+  color: rgb(243, 126, 72);
+}
+
+#loading-submit:hover {
+  background-color: rgb(243, 126, 72);
+  color: peachpuff;
+  border: 1px solid peachpuff;
+}
+
+#loading-input {
+  background-color: white;
+  border: 0px solid;
+  height: 3vh;
+  width: 20vw;
+  border-radius: 5px;
+  color: rgb(243, 126, 72);
+  margin-bottom: 2vh;
+  font-family: 'STARWARS';
+  text-align: center;
+}
+
 h1, 
 h2, 
 h3, 
 p {
   /* font-family: "Helvetica", sans-serif; */
-  font-family: 'Nosifer', cursive;
-  /* font-family: STARWARS, Verdana, Geneva, Tahoma, sans-serif */
+  /* font-family: 'Nosifer', cursive; */
+  font-family: STARWARS;
 }
 
 h1 {
-  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/pattern.jpeg");
   text-align: center;
   font-size: 100px;
-  color: khaki;
+  color: rgb(243, 126, 72);
 }
 
-.item h2 {
-  font-size: 32px;
-  color: white;
+h2 {
+  font-size: 3vw;
+  color: peachpuff;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
 .price {
@@ -44,4 +99,8 @@ h1 {
 
 #paint {
   background-color: skyblue;
+}
+
+img {
+    border-radius: 100%;
 }
