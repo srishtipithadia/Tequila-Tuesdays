@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Srishti's Dinner Parties</title>
+    <link href="../static/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../static/index.js"></script>
+</head>
+<body style="background-color: #13b1bd;">
+    <div id="mail-label">
+        <!--<h2>click twice</h2>-->
+    </div>
+    <div id="loading-page">
+        <button onclick="openMail()" style="background-color: #13b1bd; border: 0px none;">
+            <img id="mailbox" type="image" style="width: 50vw; height: 71vh; margin-top: 2.5vh; margin-left: 25vw;" src="../static/images/closed-mailbox.jpg">
+        </button>
+    </div>
+</body>
+</html> 
+
+<script>
+    window.onload = function() {
+        var userName = localStorage.getItem("name");
+        document.getElementById("mail-label").innerHTML = "<h1>welcome " + userName.toLowerCase() + "!</h1> <h3>please click twice</h3>";
+    };
+</script>

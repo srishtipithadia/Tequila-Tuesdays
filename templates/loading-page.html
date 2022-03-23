@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Srishti's Dinner Parties</title>
+    <link href="../static/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../static/index.js"></script>
+    <script type="text/javascript">
+      function changeHash() {
+        window.location.href += "#";
+        setTimeout("changeHashAgain()", "50")
+      }
+
+      function changeHashAgain() {
+        window.location.href += "1";
+      }
+
+      var storedHash = window.location.hash;
+      window.setInterval(function() {
+        if (window.location.hash != storedHash) {
+          window.location.hash = storedHash;
+        }
+      }, 50);
+      window.onload=changeHash;
+    </script>
+</head>
+<body>
+  <div id="loading-page">
+    <div id="user-input-container">
+      <h2>your number:</h2>
+      <input id="loading-input" type="text"> 
+      <input id="loading-submit" type="submit" value="submit" onclick="onSubmit()">
+    </div>
+  </div>
+</body>
+</html>

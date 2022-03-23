@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Srishti's Dinner Parties</title>
+    <link href="../static/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../static/index.js"></script>
+</head>
+<body style="background-color: #9cc4f3;">
+  <div class="top-panel" style="height: 14vh;">
+    <h3 style="color: #2966ac; font-size: 3vh; text-align: right;">August 30th, 2022</h3>
+  </div>
+
+  <div class="middle-panel-content-wrap">
+    <div class="middle-panel-content">
+      <h1 style="color: #2966ac; margin-top: 2.5vh;">Ocean</h1>
+    </div>
+    <div class="tabs-cover" id="tab1cover" style="width: 28.75vw; height: 5vh; margin-top: -2vh; visibility: visible;"></div>
+    <div class="tabs-cover" id="tab2cover" style="margin-left: 3.7vw; width: 28.75vw; height: 5vh; margin-top: -2vh; visibility: hidden;"></div>
+    <div class="tabs-cover" id="tab3cover" style="margin-left: 3.7vw; width: 28.75vw; height: 5vh; margin-top: -2vh; visibility: hidden;"></div>
+  </div>
+
+  <div class="middle-panel-tabs" id="tab1" onclick="partyTab1()">
+    <div class="tabs-cover" id="tab1cover" style="z-index: 1;">
+      <div style="z-index: 2; margin-left: 8vw; margin-top: 1.5vh; position: fixed;">GENERAL INFO</div>
+    </div>
+  </div>
+  <div class="middle-panel-tabs" id="tab2" style="margin-left: .5vw;" onclick="partyTab2()">
+    <div class="tabs-cover" id="tab2cover" style="z-index: 0;">
+      <div style="z-index: 2; margin-left: 10vw; margin-top: 1.5vh; position: fixed;">TAB TWO</div>
+    </div>
+  </div>
+  <div class="middle-panel-tabs" id="tab3" style="margin-left: .5vw;" onclick="partyTab3()">
+    <div class="tabs-cover" id="tab3cover" style="z-index: 0;">
+      <div style="z-index: 2; margin-left: 9.5vw; margin-top: 1.5vh; position: fixed;">TO BRING</div>
+    </div>
+  </div>
+
+  <div class="bottom-panel" style="background-color: #9cc4f3; border-color: #2966ac; height: 3vh; margin-top: 12vh; padding-top: 1vh; padding-bottom: 2vh; width: 97.5vw">
+    <div>
+      <button id="indv-back" action="action" onclick="window.location.href='/newPage?page=home-page.html'; return false;" style="margin-left: 40vw" type="submit">Back</button>
+    </div>
+  </div>
+  
+</body>
+</html>

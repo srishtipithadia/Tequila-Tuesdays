@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Srishti's Dinner Parties</title>
+    <link href="../static/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../static/index.js"></script>
+</head>
+<body style="background-color: #a4d498;">
+  <div class="top-panel" style="overflow: hidden; padding-bottom: 6.5vh;">
+    <h1 style="color: #497e3b;">Contribution Sign-Ups</h1>
+  </div>
+
+  <div class="middle-panel" style="background-color: #497e3b; height: 67vh; padding: 5px; overflow: auto;">
+    
+    <div id="modal">
+      <div id="modal-content">
+        <h2 style="color: #a4d498; font-size: 4vw;">sign-up form</h2>
+        <h2 id="cont-value" style="color: #497e3b; font-size: 2vw; padding-bottom: 3vh;">to bring xyz on mm/dd/yyyy</h3>
+        <div>
+          <h3 style="line-height: 1vh;">your name:</h3>
+          <input id="modal-name-input" type="text"> 
+        </div>
+        <div style="padding-bottom: 3vh;">
+          <h3 style="padding-right: 6vw;">quantity:</h3>
+          <button id="incrementer" onclick="incrementLabel(false)">-</button>
+          <div id="quantity-label" style="display: inline-block; margin-right: 2vw;">1</div>
+          <button id="incrementer" onclick="incrementLabel(true)">+</button>
+          <h3 id="min-label" style="padding-left: 1vw;">(min 1)</h3>
+        </div>
+        <div style="padding-left: 15vw">
+          <button id="modal-submit" onclick="submitModal()">submit</button>
+        </div>
+      </div>
+    </div>
+
+    <table class="party-cell" style="margin-top: 5px;"> 
+      <tr style="border-bottom: none;">
+        <th class="pc-header" colspan="2">August 30th, 2022</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="line-item">
+            <div>1. Item 1</div>
+          </div>
+        </td>
+        <td>
+          <div class="sign-up yes" onclick="openSignupModal(this, 1)">
+            <div id="req-1">Srishti P.</div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td>
+          <div class="line-item">
+            <div>2. Item 2</div>
+          </div>
+        </td>
+        <td>
+          <div class="sign-up no" onclick="openSignupModal(this, 2)">
+            <div id="req-2">Sign Up Here</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <table class="party-cell"> 
+      <tr>
+        <th class="pc-header" colspan="2">September 6th, 2022</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="line-item">
+            <div>1. Item 3</div>
+          </div>
+        </td>
+        <td>
+          <div class="sign-up no" onclick="openSignupModal(this, 3)">
+            <div id="req-3">Sign Up Here</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <table class="party-cell"> 
+      <tr>
+        <th class="pc-header" colspan="2">September 13th, 2022</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="line-item">
+            <div>1. Item 4</div>
+          </div>
+        </td>
+        <td>
+          <div class="sign-up no" onclick="openSignupModal(this, 4)">
+            <div id="req-4">Sign Up Here</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="bottom-panel bp-csp" style="overflow: hidden; padding-top: 2vh;">
+    <tr>
+      <td>
+        <button type="button" id="signup-button" style="margin-left: 25vw; margin-right: 3vw;"  onclick="mySignupsRedirect()">My Sign-Ups</button>
+      </td>
+      <td>
+        <button type="submit" action="action" style="margin-right: 25vw; margin-left: 3vw;" onclick="window.history.go(-1); return false;">Back</button>
+      </td>
+    </tr>
+  </div>
+
+</body>
+</html>

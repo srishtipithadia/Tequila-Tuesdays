@@ -1,0 +1,443 @@
+@font-face {
+    font-family:"STARWARS";
+    src:url("fonts/STARWARS.eot?") format("eot"),
+        url("fonts/STARWARS.woff") format("woff"),
+        url("fonts/STARWARS.ttf") format("truetype"),
+        url("fonts/STARWARS.svg#STARWARS") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+
+body {
+  background-color: peachpuff;
+}
+
+#loading-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#user-input-container {
+  margin: auto;
+  text-align: center;
+  display: block;
+  background-color: #f37e48;
+  width: 30vw;
+  height: 20vh;
+  border-radius: 10px;
+  padding-top: 3vh;
+  padding-bottom: 3.5vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+h2 {
+  font-size: 3vw;
+  color: peachpuff;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  font-family: 'STARWARS';
+}
+
+#loading-submit {
+  background-color: #ffdab9;
+  border: 0px solid;
+  height: 4vh;
+  width: 10vw;
+  border-radius: 5px;
+  font-family: 'STARWARS';
+  color: #f37e48;
+}
+
+#loading-submit:hover {
+  background-color: #f37e48;
+  color: #ffdab9;
+  border: 1px solid #ffdab9;
+  cursor: pointer;
+}
+
+#loading-input {
+  background-color: #ffffff;
+  border: 0px solid;
+  height: 3vh;
+  width: 20vw;
+  border-radius: 5px;
+  color: #f37e48;
+  margin-bottom: 2vh;
+  font-family: 'STARWARS';
+  text-align: center;
+}
+
+#mail-label h1 {
+  text-align: center; 
+  color: #fdd422; 
+  padding-top: 3vh; 
+  margin-bottom: 3vh;
+}
+
+#mail-label h3 {
+  text-align: center; 
+  color: #fdd422; 
+}
+
+.top-panel {
+  height: 15vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: calc(40px + 3.25vw);
+  color: #f34864;
+  font-family: 'STARWARS';
+  vertical-align: middle;
+}
+
+.middle-panel {
+  height: 67vh;
+  background-color: #f34864;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.middle-panel-tabs {
+  height: 65vh;
+  background-color: #2966ac; 
+  margin-top: -6.5vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: inline-block;
+  width: 32.5%;
+}
+
+.tabs-cover{
+  height: 66vh;
+  background-color: #9cc4f3; 
+  margin-top: 2vh;
+  margin-left: 1.5vw;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: inline-block;
+  width: 90%;
+  font-family: "STARWARS";
+  color: #2966ac;
+  cursor: pointer;
+}
+
+.middle-panel-content-wrap {
+  height: 74vh;
+  background-color: #2966ac; 
+  position: fixed;
+  margin-top: 1vh;
+  z-index: 0;
+  width: 98vw;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: inline-block;
+}
+
+.middle-panel-content {
+  height: 70.5vh;
+  background-color: #9cc4f3; 
+  position: fixed;
+  margin-top: 1.5vh;
+  margin-left: 1.5vw;
+  z-index: 1;
+  width: 95vw;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: inline-block;
+}
+
+#indv-party-list {
+  width: 98.5vw;
+  height: 67vh;
+  text-align: center;
+}
+
+#indv-party-list td {
+  position: relative;
+}
+
+#indv-party-list td div {
+  width: 15vw;
+  height: 12vh;
+  text-align: center;
+  background-color: #ffc0cb;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#indv-party-list img {
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: relative;
+  width: 35%;
+}
+
+.party-button-select:hover {
+  border: 5px solid rgb(99, 4, 24);
+  cursor: pointer;
+}
+
+.party-cell {
+  background-color: #a4d498;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10px;
+  width: 96vw;
+  border-collapse: collapse;
+}
+
+#modal {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#modal-content {
+  background-color: #ffffff;
+  width: 45vw;
+  height: 45vh;
+  border-radius: 10px;
+  margin: 12% auto;
+  padding: 20px;
+  border: 0px none;
+}
+
+#modal-content h3 {
+  color: #304d29; 
+  display: inline-block; 
+  padding-right: 40px; 
+  padding-left: 7vw;
+}
+
+#modal-content input {
+  background-color: #d3f7ca;
+  border: 2px solid #497e3b;
+}
+
+#min-label {
+  font-size: 1.5vw; 
+  color: #497e3b; 
+  display: inline-block;
+}
+
+#incrementer {
+  display: inline-block; 
+  margin-right: 2vw;
+  border: 0px none;
+  background-color: #497e3b;
+  border-radius: 10px;
+  color: #d3f7ca;
+  width: 2vw;
+  height: 3.5vh;
+}
+
+#incrementer:hover {
+  border: 1px solid #497e3b;
+  background-color: #d3f7ca;
+  color: #497e3b;
+  cursor: pointer;
+}
+
+#modal-name-input {
+  border: 0px solid;
+  height: 3vh;
+  width: 20vw;
+  border-radius: 5px;
+  color: #304d29;
+  margin-bottom: 2vh;
+  font-family: 'STARWARS';
+  text-align: center;
+}
+
+#modal-submit {
+  background-color: #497e3b;
+  border: 0px solid;
+  height: 5vh;
+  width: 15vw;
+  border-radius: 5px;
+  font-family: 'STARWARS';
+  color: #d3f7ca;
+}
+
+#modal-submit:hover {
+  background-color: #d3f7ca;
+  color: #497e3b;
+  border: 1px solid #497e3b;
+  cursor: pointer;
+}
+
+ .pc-header {
+  background-color: #304d29;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100vw;
+  height: 3.75vh;
+  color: #a4d498;
+  margin: auto;
+  font-family: "STARWARS";
+  font-size: 3vh;
+  text-align: center;
+}
+
+.line-item {
+  text-align: center;
+  line-height: 4.5vh;
+  font-family: "STARWARS";
+  font-size: 2.25vh;
+  color: #304d29;
+}
+
+.sign-up {
+  text-align: center;
+  width: 18vw;
+  height: 3.25vh;
+  float: right;
+  margin-right: 15vw;
+  font-family: "STARWARS";
+  font-size: 2.25vh;
+  position: relative;
+}
+
+.yes {
+  color: #497e3b;
+}
+
+.yes div {
+  width: 18vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.yes:hover {
+  cursor: default;
+}
+
+.no {
+  background-color: #a4d498;
+  border: 2px solid #304d29;
+  color: #304d29;
+  border-radius: 10px;
+}
+
+.no div {
+  width: 18vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no:hover {
+  background-color: #304d29;
+  border: 0px none;
+  color: #a4d498;
+  cursor: pointer;
+}
+
+.bottom-panel {
+  border: 3px solid #f34864;
+  height: 6.5vh;
+  background-color: #ffc0cb;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 2.5vh;
+}
+
+.bottom-panel button {
+  background-color: #f34864;
+  border: 0px solid;
+  height: 4vh;
+  width: 20vw;
+  border-radius: 5px;
+  font-family: 'STARWARS';
+  color: #ffc0cb;
+  display: inline-block;
+}
+
+.bottom-panel button:hover {
+  background-color: #ffc0cb;
+  color: #f34864;
+  border: 1px solid #f34864;
+  cursor: pointer;
+}
+
+.bp-csp {
+  background-color: #a4d498;
+  border: 3px solid #497e3b;
+  height: 5vh;
+  padding-top: 1vh;
+}
+
+.bp-csp button {
+  background-color: #497e3b;
+  color: #a4d498;
+  margin-left: 39vw;
+}
+
+.bp-csp button:hover {
+  background-color: #a4d498;
+  color: #497e3b;
+  border: 1px solid #497e3b;
+  cursor: pointer;
+}
+
+#bp-msp {
+  background-color: #cab91b;
+  color: #ebf3a1;
+  margin-left: 39vw;
+}
+
+#bp-msp:hover {
+  background-color: #ebf3a1;
+  color: #cab91b;
+  border: 1px solid #cab91b;
+  cursor: pointer;
+}
+
+#bp-rsvp {
+  background-color: #bd50f0;
+  color: #e1aef8;
+  margin-left: 39vw;
+}
+
+#bp-rsvp:hover {
+  background-color: #e1aef8;
+  color: #bd50f0;
+  border: 1px solid #bd50f0;
+  cursor: pointer;
+}
+
+#indv-back {
+  background-color: #2966ac;
+  color: #9cc4f3;
+  margin-left: 39vw;
+}
+
+#indv-back:hover {
+  background-color: #9cc4f3;
+  color: #2966ac;
+  border: 1px solid #2966ac;
+  cursor: pointer;
+}
+
+h3, 
+p {
+  font-family: STARWARS;
+}
