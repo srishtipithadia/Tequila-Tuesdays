@@ -33,6 +33,9 @@ function validateNumber(number) {
     .then((myJson) => {
         if (myJson.result) {
             var name = myJson.result
+
+            console.log(name);
+
             document.getElementById("loading-input").value = null;
 
             sessionStorage.setItem("phoneNumberInput", number);
