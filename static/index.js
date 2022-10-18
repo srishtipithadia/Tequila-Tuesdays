@@ -135,6 +135,16 @@ function submitModal() {
     }
 }
 
+function rsvpModal() {
+    document.getElementById("modal").style.display = "block";
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("modal")) {
+            modalNum = -1;
+            document.getElementById("modal").style.display = "none";
+        }
+    }
+}
+
 function partyTab1() {
     document.getElementById("tab2cover").style.visibility = "hidden";
     document.getElementById("tab3cover").style.visibility = "hidden";

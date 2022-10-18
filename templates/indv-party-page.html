@@ -10,7 +10,18 @@
     <h3 style="color: #2966ac; font-size: 3vh; text-align: right;">August 30th, 2022</h3>
   </div>
 
+  <div id="modal">
+    <div id="rsvp-content">
+      <h2 style="color: #a4d498; font-size: 4vw;">sign-up form</h2>
+      <div style="padding-bottom: 3vh;">
+        <button id="incrementer" onclick="incrementLabel(false)">Yes</button>
+        <button id="incrementer" onclick="incrementLabel(true)">No</button>
+      </div>
+    </div>
+  </div>
+
   <div class="middle-panel-content-wrap">
+
     <div class="middle-panel-content">
       <h1 style="color: #2966ac; margin-top: 2.5vh;">Ocean</h1>
     </div>
@@ -36,9 +47,14 @@
   </div>
 
   <div class="bottom-panel" style="background-color: #9cc4f3; border-color: #2966ac; height: 3vh; margin-top: 12vh; padding-top: 1vh; padding-bottom: 2vh; width: 97.5vw">
-    <div>
-      <button id="indv-back" action="action" onclick="window.location.href='/newPage?page=home-page.html'; return false;" style="margin-left: 40vw" type="submit">Back</button>
-    </div>
+    <tr>
+      <td>
+        <button type="submit" id="indv-back" style="margin-left: 25vw; margin-right: 3vw;" onclick="window.location.href='/newPage?page=home-page.html'; return false;">Back</button>
+      </td>
+      <td>
+        <button type="button" id="indv-rsvp" style="margin-right: 13vw; margin-left: 3vw;" onclick="rsvpModal()">RSVP</button>
+      </td>
+    </tr>
   </div>
   
 </body>

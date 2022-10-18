@@ -229,6 +229,16 @@ h1 {
   border: 2px solid #497e3b;
 }
 
+#rsvp-content {
+  background-color: #bfdaf9;
+  width: 25vw;
+  height: 25vh;
+  border-radius: 10px;
+  margin: 12% auto;
+  padding: 20px;
+  border: 0px none;
+}
+
 #min-label {
   font-size: 1.5vw; 
   color: #497e3b; 
@@ -424,13 +434,12 @@ h1 {
   cursor: pointer;
 }
 
-#indv-back {
+#indv-back, #indv-rsvp {
   background-color: #2966ac;
   color: #9cc4f3;
-  margin-left: 39vw;
 }
 
-#indv-back:hover {
+#indv-back:hover, #indv-rsvp:hover {
   background-color: #9cc4f3;
   color: #2966ac;
   border: 1px solid #2966ac;
