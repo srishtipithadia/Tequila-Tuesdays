@@ -12,10 +12,10 @@
 
   <div id="modal">
     <div id="rsvp-content">
-      <h2 style="color: #a4d498; font-size: 4vw;">sign-up form</h2>
+      <h2 id="rsvp-label" style="color: #2966ac; font-size: 4vw;">rsvp</h2>
       <div style="padding-bottom: 3vh;">
-        <button id="incrementer" onclick="incrementLabel(false)">Yes</button>
-        <button id="incrementer" onclick="incrementLabel(true)">No</button>
+        <button class="rsvp-answer" onclick="updateRsvp(1)">Yes</button>
+        <button class="rsvp-answer" onclick="updateRsvp(0)" style="margin-left: 2vw">No</button>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@
         <button type="submit" id="indv-back" style="margin-left: 25vw; margin-right: 3vw;" onclick="window.location.href='/newPage?page=home-page.html'; return false;">Back</button>
       </td>
       <td>
-        <button type="button" id="indv-rsvp" style="margin-right: 13vw; margin-left: 3vw;" onclick="rsvpModal()">RSVP</button>
+        <button type="button" id="indv-rsvp" style="margin-right: 13vw; margin-left: 3vw;" onclick="showModal()">RSVP</button>
       </td>
     </tr>
   </div>

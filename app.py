@@ -99,6 +99,14 @@ def getRsvps():
     print(rsvps)
     return rsvps
 
+@app.route("/updateRsvp")
+def updateRsvp():
+    number = request.args.get('number')
+    status = request.args.get('status')
+
+    updateQ = "UPDATE eligibleNumbers SET %s = %d WHERE phone_number = %s"
+    execute_query(db_connection, updateQ, False)
+
 
 #-----------------------STUFF THATS NOT USED---v--------------------
 def create_server_connection(host_name, user_name, user_password):

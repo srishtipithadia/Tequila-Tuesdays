@@ -135,7 +135,7 @@ function submitModal() {
     }
 }
 
-function rsvpModal() {
+function showModal() {
     document.getElementById("modal").style.display = "block";
     window.onclick = function(event) {
         if (event.target == document.getElementById("modal")) {
@@ -143,6 +143,26 @@ function rsvpModal() {
             document.getElementById("modal").style.display = "none";
         }
     }
+}
+
+function updateRsvp(status) {
+    var phone = sessionStorage.getItem("phoneNumberInput");
+
+    fetch('/updateRsvp?number='+phone+'&status='+status)
+    .then((response) => {
+        return response.json();
+    })
+    .then((myJson) => {
+        status = (status == 1) ? "Yes" : "No";
+        document.getElementById("rsvp-label").value = 'said ' + status;
+
+        document.getElementsByClassName("rsvp-answer")[0].style.display = "none";
+        document.getElementsByClassName("rsvp-answer")[1].style.display = "none";
+
+        setTimeout(() => {
+            window.location.href="/newPage?page=indv-party-page.html";
+        }, '500');
+    });
 }
 
 function partyTab1() {

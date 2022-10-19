@@ -229,16 +229,6 @@ h1 {
   border: 2px solid #497e3b;
 }
 
-#rsvp-content {
-  background-color: #bfdaf9;
-  width: 25vw;
-  height: 25vh;
-  border-radius: 10px;
-  margin: 12% auto;
-  padding: 20px;
-  border: 0px none;
-}
-
 #min-label {
   font-size: 1.5vw; 
   color: #497e3b; 
@@ -288,6 +278,34 @@ h1 {
   background-color: #d3f7ca;
   color: #497e3b;
   border: 1px solid #497e3b;
+  cursor: pointer;
+}
+
+#rsvp-content {
+  background-color: #bfdaf9;
+  width: 10.5vw;
+  height: 17vh;
+  border-radius: 10px;
+  margin: 12% auto;
+  padding: 20px;
+  border: 0px none;
+}
+
+.rsvp-answer {
+  display: inline-block; 
+  border: 0px none;
+  background-color: #2966ac;
+  border-radius: 10px;
+  color: #9cc4f3;
+  width: 4vw;
+  height: 4vh;
+  font-family: "STARWARS";
+}
+
+.rsvp-answer:hover {
+  border: 1px solid #2966ac;
+  background-color: #9cc4f3;
+  color: #2966ac;
   cursor: pointer;
 }
 
