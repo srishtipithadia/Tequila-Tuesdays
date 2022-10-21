@@ -2,7 +2,7 @@
 FROM python:3.9.6
 
 # Set the working directory in the container
-WORKDIR /Test-Site
+WORKDIR /var/site
 
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
