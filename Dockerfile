@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY app.py .
 
 # By default, listen on port 5000
-EXPOSE 5000/tcp
+EXPOSE 80/tcp
 
 # Specify the command to run on container start
 CMD [ "python3", "./app.py" ]
