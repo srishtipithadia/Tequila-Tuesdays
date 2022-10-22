@@ -6,8 +6,8 @@ WORKDIR /var/site
 
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
-#ENV STATIC_URL /static
-#ENV STATIC_PATH /var/site/static
+ENV STATIC_URL /static
+ENV STATIC_PATH ./static
 
 # Install any dependencies
 RUN pip install -r requirements.txt
