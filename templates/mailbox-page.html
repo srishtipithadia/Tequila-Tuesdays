@@ -19,7 +19,13 @@
 
 <script>
     window.onload = function() {
-        var userName = localStorage.getItem("name");
+        var userName = sessionStorage.getItem("userName");
         document.getElementById("mail-label").innerHTML = "<h1>welcome " + userName.toLowerCase() + "!</h1> <h3>please click twice</h3>";
+    };
+
+    window.onpageshow = function(event) {
+        if (!sessionStorage.getItem("userName")) {
+            noSession();
+        }
     };
 </script>

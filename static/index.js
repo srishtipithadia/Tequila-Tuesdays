@@ -16,6 +16,10 @@ function clearCache() {
     modalNum = -1;
 }
 
+function noSession() {
+    window.location.href="/newPage?page=loading-page.html";
+}
+
 function onSubmit() {
     var number = document.getElementById("loading-input").value.replace(/\D/g, '');
     if (!number) {
@@ -31,19 +35,15 @@ function validateNumber(number) {
         return response.json();
     })
     .then((myJson) => {
+        document.getElementById("loading-input").value = null;
+
         if (myJson.result) {
-            var name = myJson.result
-
-            console.log(name);
-
-            document.getElementById("loading-input").value = null;
-
             sessionStorage.setItem("phoneNumberInput", number);
-            sessionStorage.setItem("userName", name);
+            sessionStorage.setItem("userName", myJson.result);
+
             window.location.href="/newPage?page=mailbox-page.html";
         } else {
             alert("This number is invalid.");
-            document.getElementById("loading-input").value = null;
         }
     });
 }
@@ -147,6 +147,7 @@ function showModal() {
 
 function updateRsvp(status) {
     var phone = sessionStorage.getItem("phoneNumberInput");
+    var party = sessionStorage.getItem("selectedParty");
 
     fetch('/updateRsvp?number='+phone+'&status='+status)
     .then((response) => {

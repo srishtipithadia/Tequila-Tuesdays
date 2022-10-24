@@ -70,7 +70,6 @@ def numberValidate():
     execute_query(db_connection, updateQ, False)
     retVal = str(execute_query(db_connection, nameQ, True))[3:-4]
 
-    print(retVal)
     return jsonify({"result": retVal})
 
 @app.route("/newPage")
@@ -104,7 +103,7 @@ def updateRsvp():
     number = request.args.get('number')
     status = request.args.get('status')
 
-    updateQ = "UPDATE eligibleNumbers SET %s = %d WHERE phone_number = %s"
+    updateQ = "UPDATE eligibleNumbers SET %s = %d WHERE phone_number = %s" % (status, number)
     execute_query(db_connection, updateQ, False)
 
 

@@ -47,3 +47,11 @@
 
 </body>
 </html>
+
+<script>
+  window.onpageshow = function(event) {
+      if (!sessionStorage.getItem("userName")) {
+          noSession();
+      }
+  };
+</script>
