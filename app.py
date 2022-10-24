@@ -60,6 +60,10 @@ if __name__ == "__main__":
 def index():
     return render_template('loading-page.html')
 
+@app.route("/test")
+def index():
+    return 'Time Fries when you are having too much fun!!!!'
+
 @app.route("/checkPhone")
 def numberValidate():
     inputtedNum = request.args.get('number')
