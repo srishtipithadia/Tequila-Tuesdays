@@ -61,7 +61,7 @@ def index():
     return render_template('loading-page.html')
 
 @app.route("/test")
-def index():
+def test():
     return 'Time Fries when you are having too much fun!!!!'
 
 @app.route("/checkPhone")
