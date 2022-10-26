@@ -85,8 +85,8 @@ def numberValidate():
     execute_query(db_connection, updateQ, False)
     retVal = str(execute_query(db_connection, nameQ, True))[3:-4]
 
-    if (retVal):
-        signinConfirm(retVal)
+    #if (retVal):
+        #signinConfirm(retVal)
 
     return jsonify({"result": retVal})
 
