@@ -5,10 +5,16 @@ from twilio.rest import Client
 import mysql.connector
 from mysql.connector import errorcode
 from datetime import date
-app = Flask(__name__)
 #--------------------------IMPORTS--^-----------------------
 
+app = Flask(__name__)
+app.config.from_object('config.Config')
+
 #-------------------FUNCS FOR SQL STUFF--v------------------
+db_server = os.environ.get('DB_SERVER')
+db_user = os.environ.get('DB_USER')
+db_pwd = os.environ.get('DB_PWD')
+
 def create_db_connection(host_name, user_name, user_password, db_name):
     connection = None
     try:
@@ -24,13 +30,8 @@ def create_db_connection(host_name, user_name, user_password, db_name):
         print(f"Error: '{err}'")
     return connection
 
-# need to make this private
-db_server = "guestlist.cynpj4no4mcx.us-east-1.rds.amazonaws.com"
-db_user= "admin"
-db_pwd="PercyJackson18"
-
 global db_connection
-db_connection = create_db_connection( db_server, db_user, db_pwd, "dinnerPartyData")
+db_connection = create_db_connection(db_server, db_user, db_pwd, "dinnerPartyData")
 
 def execute_query(connection, query, ret):
     cursor = connection.cursor()
@@ -50,8 +51,8 @@ def execute_query(connection, query, ret):
 #-------------------FUNCS FOR SQL STUFF--^------------------
 
 #-----------------------TWILIO STUFF--v---------------------
-account_sid = 'AC5c6b10efc442d923991a3ac3e5cfe4c2'
-auth_token = 'f19461cde221b4d6838611680e30acde'
+account_sid = os.environ.get('ACCOUNT_SID')
+auth_token = os.environ.get('AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 def signinConfirm(num):
