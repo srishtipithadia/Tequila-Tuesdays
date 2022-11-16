@@ -1,3 +1,4 @@
 flask===2.0.3
 mysql-connector-python==8.0.15
 twilio==7.15.0
+python-dotenv==0.21.0
