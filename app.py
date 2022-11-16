@@ -53,9 +53,9 @@ account_sid = os.environ.get('ACCOUNT_SID')
 auth_token = os.environ.get('AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
-def signinConfirm(num):
+def signinConfirm(name, num):
     message = client.messages.create(
-        body="Confirm login attempt. Respond (y) or (n).",
+        body="Confirm login attempt for {}. Respond (y) or (n).".format(name),
         from_='+18509188050',
         to='+1{}'.format(num)
     )
@@ -84,8 +84,8 @@ def numberValidate():
     execute_query(db_connection, updateQ, False)
     retVal = str(execute_query(db_connection, nameQ, True))[3:-4]
 
-    if (retVal):
-        signinConfirm(retVal)
+    if (retVal, inputtedNum):
+        signinConfirm(retVal, inputtedNum)
 
     return jsonify({"result": retVal})
 
