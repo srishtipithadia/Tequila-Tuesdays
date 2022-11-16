@@ -1,11 +1,9 @@
-#--------------------------IMPORTS--v-----------------------
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import os
 from twilio.rest import Client
 import mysql.connector
 from mysql.connector import errorcode
 from datetime import date
-#--------------------------IMPORTS--^-----------------------
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
@@ -59,7 +57,7 @@ def signinConfirm(num):
     message = client.messages.create(
         body="Confirm login attempt. Respond (y) or (n).",
         from_='+18509188050',
-        to='+12032909487'
+        to='+1{}'.format(num)
     )
 
     call = client.calls.get("message.sid")
@@ -86,8 +84,8 @@ def numberValidate():
     execute_query(db_connection, updateQ, False)
     retVal = str(execute_query(db_connection, nameQ, True))[3:-4]
 
-    #if (retVal):
-        #signinConfirm(retVal)
+    if (retVal):
+        signinConfirm(retVal)
 
     return jsonify({"result": retVal})
 
