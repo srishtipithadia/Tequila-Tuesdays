@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import os
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 import mysql.connector
 from mysql.connector import errorcode
@@ -55,13 +56,13 @@ client = Client(account_sid, auth_token)
 
 def signinConfirm(name, num):
     message = client.messages.create(
-        body="Confirm login attempt for {}. Respond (y) or (n).".format(name),
+        body="Hi {}! Please confirm your login attempt by responding (y) or (n).".format(name),
         from_='+18509188050',
-        to='+1{}'.format(num)
+        to=num
     )
 
-    call = client.calls.get("message.sid")
-    print(call.to)
+    #call = client.calls.get("message.sid")
+    #print(call.to)
 
     print(message.sid)
 #-----------------------TWILIO STUFF--^---------------------
@@ -84,10 +85,25 @@ def numberValidate():
     execute_query(db_connection, updateQ, False)
     retVal = str(execute_query(db_connection, nameQ, True))[3:-4]
 
-    if (retVal, inputtedNum):
-        signinConfirm(retVal, inputtedNum)
+    if (retVal):
+        signinConfirm(retVal, '+1'+str(inputtedNum))
 
     return jsonify({"result": retVal})
+
+@app.route("/loginResponse", methods=['POST'])
+def loginResponse():
+    resp = MessagingResponse()
+
+    print(resp)
+
+    if resp == 'y':
+        resp.message("Confirmed.")
+    elif resp == 'n':
+        resp.message("Denied.")
+    else:
+        resp.message("Not a valid option.")
+
+    return str(resp)
 
 @app.route("/newPage")
 def changePages():
