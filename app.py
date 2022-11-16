@@ -95,6 +95,7 @@ def loginResponse():
     resp = MessagingResponse()
 
     print(resp)
+    resp.message("Done.")
 
     if resp == 'y':
         resp.message("Confirmed.")
