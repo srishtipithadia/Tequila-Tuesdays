@@ -75,6 +75,16 @@ if __name__ == "__main__":
 def index():
     return render_template('loading-page.html')
 
+@app.route("/addNewUser")
+def addNewUser():
+    inputtedNum = request.args.get('number')
+    inputtedFirst = request.args.get('first')
+    inputtedLast = request.args.get('last')
+
+    updateQ = "INSERT INTO TABLE eligibleNumbers (first_name, last_name, phone_number, current_timestamp) VALUES (%s, %s, %s, current_timestamp())" % str(inputtedFirst), str(inputtedLast), str(inputtedNum)
+
+    execute_query(db_connection, updateQ, False)
+
 @app.route("/checkPhone")
 def numberValidate():
     inputtedNum = request.args.get('number')

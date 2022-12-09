@@ -20,13 +20,76 @@ function noSession() {
     window.location.href="/newPage?page=loading-page.html";
 }
 
-function onSubmit() {
-    var number = document.getElementById("loading-input").value.replace(/\D/g, '');
+function onSubmit(amReturning) {
+    if (amReturning) {
+        var number = document.getElementById("loading-input").value.replace(/\D/g, '');
+
+        if (!number) {
+            alert("Please enter a phone number first.");
+        } else {
+            validateNumber(number); 
+        } 
+    }
+
+    if (!amReturning) {
+        var number = document.getElementById("number-input").value.replace(/\D/g, '');
+
+        var firstName = document.getElementById("first-name-input").value.toLowerCase();
+        firstName = firstName.charAt(0).toUpperCase() + firstName.substring(1);
+
+        var lastName = document.getElementById("last-name-input").value.toLowerCase();
+        lastName = lastName.charAt(0).toUpperCase() + lastName.substring(1);
+
+        if (!firstName || !lastName) {
+            alert("Please enter a valid name first.");
+        } else if (!number) {
+            alert("Please enter a phone number first.")
+        } else {
+            addNewUser(firstName, lastName, number);
+        }
+    }
+
     if (!number) {
         alert("Please enter a phone number first.");
     } else {
-        validateNumber(number); 
+        if (amReturning) {
+            validateNumber(number); 
+        } else {
+            addNewUser(firstName, lastName, number);
+        }
     } 
+}
+
+function addNewUser(firstName, lastName, number) {
+    fetch('/addNewUser?first='+firstName+'&last='+lastName+'&number='+number)
+    .then((response) => {
+        return response.json();
+    })
+    .then((myJson) => {
+        validateNumber(number)
+    });
+}
+
+function register(amRegistering) {
+    if (amRegistering) {
+        var number = document.getElementById("loading-input").value.replace(/\D/g, '');
+
+        document.getElementById("loading-page").style.display = "none"
+        document.getElementById("registration-page").style.display = "block"
+
+        if (number != null) {
+            document.getElementById("number-input").value = number
+        }
+    } else {
+        var number = document.getElementById("number-input").value.replace(/\D/g, '');
+
+        document.getElementById("loading-page").style.display = "block"
+        document.getElementById("registration-page").style.display = "none"
+
+        if (number != null) {
+            document.getElementById("loading-input").value = number
+        }
+    }
 }
 
 function validateNumber(number) {

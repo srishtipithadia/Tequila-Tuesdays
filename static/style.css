@@ -12,19 +12,17 @@ body {
   background-color: peachpuff;
 }
 
-#loading-page {
+#loading-page, #registration-page {
   width: 100vw;
   height: 100vh;
   position: relative;
 }
 
-#user-input-container {
+#user-input-container, #registration-input-container {
   margin: auto;
   text-align: center;
   display: block;
   background-color: #f37e48;
-  width: 30vw;
-  height: 20vh;
   border-radius: 10px;
   padding-top: 3vh;
   padding-bottom: 3.5vh;
@@ -42,7 +40,7 @@ h2 {
   font-family: 'STARWARS';
 }
 
-#loading-submit {
+#loading-submit, #registration, #registration-submit, #back-login {
   background-color: #ffdab9;
   border: 0px solid;
   height: 4vh;
@@ -52,14 +50,14 @@ h2 {
   color: #f37e48;
 }
 
-#loading-submit:hover {
+#loading-submit:hover, #registration-submit:hover, #registration:hover, #back-login:hover {
   background-color: #f37e48;
   color: #ffdab9;
   border: 1px solid #ffdab9;
   cursor: pointer;
 }
 
-#loading-input {
+#loading-input, #first-name-input, #last-name-input, #number-input {
   background-color: #ffffff;
   border: 0px solid;
   height: 3vh;

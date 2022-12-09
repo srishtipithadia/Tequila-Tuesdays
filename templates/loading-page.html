@@ -7,11 +7,30 @@
 </head>
 
 <body>
+  <div id="registration-page" style="display: none;">
+    <div id="registration-input-container" style="width: 30vw; height: 55vh">
+      <h2>first name:</h2>
+      <input id="first-name-input" type="text">
+      <h2>last name:</h2>
+      <input id="last-name-input" type="text">
+      <h2>your number:</h2>
+      <input id="number-input" type="text"> 
+
+      <div>
+        <button id="back-login" type="button" onclick="register(false)">back</button>
+        <input id="registration-submit" type="submit" value="submit" onclick="onSubmit(false)">
+      </div>
+    </div>
+  </div>
+
   <div id="loading-page">
-    <div id="user-input-container">
+    <div id="user-input-container" style="width: 30vw; height: 20vh">
       <h2>your number:</h2>
       <input id="loading-input" type="text"> 
-      <input id="loading-submit" type="submit" value="submit" onclick="onSubmit()">
+      <div>
+        <button id="registration" type="button" onclick="register(true)">register</button>
+        <input id="loading-submit" type="submit" value="submit" onclick="onSubmit(true)">
+      </div>
     </div>
   </div>
 </body>
